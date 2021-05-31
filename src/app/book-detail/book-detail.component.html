@@ -1,0 +1,49 @@
+<div class="section">
+    <div class="newBookIntro">
+        <h1>有好書推薦？</h1>
+        <img src="assets/recommend.png" alt="">
+        <h2>快來推薦給我</h2>
+    </div>
+
+    <div class="addNewBook">
+        <h1><strong>好書推薦表</strong></h1>
+        <div class="form">
+            <label for="new-book">書名 ：</label>
+            <input id="new-book" #bookName />
+            <!-- <label for="new-book">書本的ISBN: </label>
+            <input id="new-ISBN" #ISBN /> -->
+            <label for="new-book">作者: </label>
+            <input id="new-author" #author />
+            <label for="new-book">出版商: </label>
+            <input id="new-publishHouse" #publishHouse />
+            <label for="new-book">價格: </label>
+            <input id="new-price" #price />
+            <label for="new-book">類型: </label>
+            <input id="new-category" #category />
+            <label for="new-book">簡介: </label>
+            <input id="new-description" #description />
+            <label for="new-book">頁數: </label>
+            <input id="new-pages" #pages />
+
+            <button class="add-button" (click)="add(
+                bookName.value,
+                author.value,
+                publishHouse.value,
+                price.value,
+                category.value,
+                description.value,
+                pages.value
+                ); 
+                bookName.value='';
+                author.value='';
+                publishHouse.value='';
+                price.value='';
+                category.value='';
+                description.value='';
+                pages.value='';
+                ">
+                大力推薦！
+            </button>
+        </div>
+    </div>
+</div>

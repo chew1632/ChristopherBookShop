@@ -1,0 +1,101 @@
+<header class="header">
+    <div class="headerLeft">
+        <img src="../assets/Logo.PNG" alt="" href="#">
+    </div>
+    <div class="headerMid">
+        <input type="text" class="searchTerm" placeholder="你想找些什麼呢?">
+        <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+            <mat-icon>search</mat-icon>
+        </button>
+    </div>
+    <div class="headerRight">
+        <div class="icon">
+            <span class="material-icons md-dark" style="color: #00b4cc;">
+                account_circle
+            </span>
+        </div>
+        <div class="login">
+            <div>
+                <a href="#"> 登錄 </a>
+                <span style="font-size: 18px;"> | </span>
+                <a href="#"> 註冊 </a>
+            </div>
+            <div>
+                <button mat-button [matMenuTriggerFor]="belowMenu" style="width: 100%;">會員專區</button>
+                <mat-menu #belowMenu="matMenu" yPosition="below">
+                    <button mat-menu-item>我的訂單</button>
+                    <button mat-menu-item>優惠券</button>
+                    <button mat-menu-item>收藏品</button>
+                </mat-menu>
+            </div>
+        </div>
+        <div class="cart">
+            <span class="material-icons" style="color: #00b4cc;">
+                shopping_cart
+            </span>
+            <a href="#">購物車</a>
+        </div>
+    </div>
+</header>
+
+<body>
+    <div class="navbar">
+        <a href="#">商管書籍</a>
+        <a href="#">外語學習</a>
+        <a href="#">理工科學</a>
+        <a href="#">商品分類</a>
+        <a href="#">商品分類</a>
+    </div>
+    <div class="imgSlider">
+        <ng-image-slider [infinite]="true" [autoSlide]="1" [images]="imageObject" #nav
+            [imageSize]="{width: '100%', height: '400px'}" [animationSpeed]=2 [slideImage]="1" [manageImageRatio]=true>
+        </ng-image-slider>
+    </div>
+    <br><br>
+    <div class="recommand">
+        <h1 style="font-weight: bold;background-color: #b9b8b8;">熱門推薦</h1>
+        <ul class="recommandBook">
+            <!-- 拿最新新增的資料 顯示在網頁 -->
+            <li *ngFor="let book of books | slice: books.length-6:books.length" [class.selected]="book === selectedBook"
+                (click)="onSelect(book)">
+                <img src={{book.picture}} alt="" style="width: 100%; height:100%;">
+                <p class="bookName">{{book.bookName}}</p>
+                <p class="price">NT$ {{book.price}}</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="newest">
+        <h1 style="font-weight: bold;background-color: #b9b8b8;">最新書籍</h1>
+        <ul class="newestBook">
+            <li *ngFor="let book of books | slice:0:6" [class.selected]="book === selectedBook"
+                (click)="onSelect(book)">
+                <img src={{book.picture}} alt="" style="width: 100%; height:100%;">
+                <p class="bookName">{{book.bookName}}</p>
+                <p class="price">NT$ {{book.price}}</p>
+            </li>
+        </ul>
+    </div>
+
+    <app-book-detail [book]="selectedBook"></app-book-detail>
+
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <p>聯絡我們：</p>
+            <p>週⼀⾄週五</p>
+            <p>08:00〜20:00 電話：0966498241</p>
+            <p>08:30〜17:30 電話：0966498241</p>
+        </div>
+        <div class="footer-center">
+            <p>E-Mail：chew1632@gmail.com</p>
+            <p>105台北市松山區南京東路三段261號7樓</p>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>Made by Christopher</span>
+                雖然我不是最強的工程師，但是我知道我自己喜歡寫程式。 :)
+            </p>
+        </div>
+    </footer>
+</body>

@@ -1,0 +1,74 @@
+.section {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  padding: 50px 100px 50px 100px;
+  background-color: beige;
+}
+.newBookIntro {
+  width: 50%;
+  background-color: white;
+  margin-right: 30px;
+  padding: 50px 0px 50px 0px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+}
+
+.newBookIntro img {
+  width: 50%;
+  height: 60%;
+}
+.addNewBook {
+  padding-left: 30px;
+  width: 50%;
+  height: fit-content;
+}
+.addNewBook .form {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.addNewBook .form input {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.addNewBook .form button {
+  border-radius: 5px;
+  color: black;
+  background-color: #00b4cc;
+  font-weight: bold;
+  padding: 5px;
+}
+@media (max-width: 769px) {
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .newBookIntro {
+    margin: 0px;
+    margin-bottom: 30px;
+  }
+  .addNewBook {
+    padding: 0px;
+  }
+}
+/* Phone Media Size */
+@media only screen and (max-width: 600px) {
+  .section {
+    padding: 0px;
+    margin: 0px;
+  }
+  .newBookIntro {
+    margin: 30px 0px 30px 0px;
+  }
+  .addNewBook {
+    margin-bottom: 30px;
+  }
+}

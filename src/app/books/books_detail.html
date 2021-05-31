@@ -1,0 +1,17 @@
+<h1 mat-dialog-title style="font-weight: bold;">
+    {{data.bookName}}</h1>
+<div mat-dialog-content>
+    <img src={{data.picture}} alt="" style="width: 50%; height: auto;">
+    <div mat-form-field>
+        <label for="book-name">作者： {{data.author}}</label><br>
+        <label for="book-name">出版社： {{data.publishHouse}}</label><br>
+        <label for="book-name">價格： {{data.price}}</label><br>
+        <label for="book-name">種類： {{data.category}}</label><br>
+        <label for="book-name">簡介： {{data.description}}</label><br>
+        <label for="book-name">頁數： {{data.pages}}</label><br>
+    </div>
+</div>
+<div mat-dialog-actions style="float: right;">
+    <button mat-button style="border-radius: 5px;color: white;background-color: #00b4cc;font-weight: bold;padding: 5px;"
+        (click)="onNoClick()">確定</button>
+</div>
